@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout >
+
+    <data>
+        <!--name属性的值可以任意定义-->
+        <variable
+            name="man"
+            type="com.example.fj.databindingdemo.bean.Person" />
+        <variable
+            name="main"
+            type="com.example.fj.databindingdemo.MainActivity"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="com.example.fj.databindingdemo.MainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{man.name}" />
+
+        <TextView
+            android:clickable="true"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> main.method()}"
+            android:text="@{man.address}" />
+    </LinearLayout>
+</layout>
